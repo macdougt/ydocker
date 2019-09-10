@@ -33,7 +33,7 @@ Are containers small virtual machines?
 
 A container runs natively on Linux and Windows for images based on their respective OS and shares the kernel of the host machine with other containers. For linux based images, OSX and Windows use very light-weight VMs (provided by their hypervisors) to run containers. By contrast, a virtual machine (VM) runs a full-blown “guest” operating system with virtual access to host resources through a hypervisor.
 
-[<img src="https://www.docker.com/sites/default/files/Container%402x.png" width="300">  &nbsp;&nbsp;&nbsp;  <img src="https://www.docker.com/sites/default/files/VM%402x.png" width="300">](https://docs.docker.com/get-started/#containers-and-virtual-machines) 
+[<img src="https://docs.docker.com/images/Container%402x.png" width="300">  &nbsp;&nbsp;&nbsp;  <img src="https://docs.docker.com/images/VM%402x.png" width="300">](https://docs.docker.com/get-started/#containers-and-virtual-machines) 
 
 What is docker engine?
 ----------------------
