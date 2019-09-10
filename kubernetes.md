@@ -1,0 +1,11 @@
+Building blocks
+---------------
+- Node - Physical or virtual machines that act as workers.
+- Master node - Provides a unified view into the cluster.
+  - includes kubelet, etcd, API server, scheduler and controller manager
+- Cluster - a group of nodes.
+- [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod) - A pod is a group of one or more containers, with shared storage/network, and a specification for how to run the containers.
+  - [labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) - key/value pairs used to precisely select Pods.
+- Service - An abstraction that defines a set of Pods and a policy to access them.
+- Namespace - provides a cross-cutting isolation mechanism inside a cluster.
+  - allows management of different environments within the same cluster (e.g. dev, testing, staging).

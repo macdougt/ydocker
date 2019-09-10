@@ -1,0 +1,27 @@
+FROM centos:6
+
+RUN yum -y update
+RUN yum groupinstall -y "development tools"
+RUN yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel expat-devel wget
+
+ENV WORKING_DIR /test/python
+ENV PYTHON_VERSION 3.6.4
+RUN mkdir -p $WORKING_DIR
+WORKDIR $WORKING_DIR
+
+
+# Python:
+RUN wget http://python.org/ftp/python/$PYTHON_VERSION/Python-$PYTHON_VERSION.tar.xz \
+    && tar xf Python-$PYTHON_VERSION.tar.xz
+    
+WORKDIR $WORKING_DIR/Python-$PYTHON_VERSION
+RUN ./configure --prefix=$WORKING_DIR/python_install --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib"
+
+RUN make
+RUN make install
+
+RUN ln -s $WORKING_DIR/python_install/bin/python3.6 $WORKING_DIR/python_install/bin/python
+RUN ln -s $WORKING_DIR/python_install/bin/pip3.6 $WORKING_DIR/python_install/bin/pip
+ENV PATH="$WORKING_DIR/python_install/bin:${PATH}"
+ENV LD_LIBRARY_PATH="$WORKING_DIR/Python-$PYTHON_VERSION"
+RUN pip install --upgrade pip
