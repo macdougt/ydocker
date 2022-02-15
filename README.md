@@ -23,7 +23,7 @@ Use [docker run](https://docs.docker.com/engine/reference/commandline/run/) to r
 `docker run --name <container name> -d -p <host port>:<container port> <image name>`
 `docker run --name my_nginx_container -d -p 8080:80 my_nginx_image`
 
-Now you should able to connect to http://localhost:8080 and it will display the content `static-html-directory ` that copied in.
+Now you should able to connect to http://localhost:8080 and it will display the content `static-html-directory` that copied in.
 
 
 ## More but not much more
