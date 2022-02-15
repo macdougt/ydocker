@@ -16,11 +16,13 @@ taken from [dockerhub nginx page](https://hub.docker.com/_/nginx).
 Use [docker build](https://docs.docker.com/engine/reference/commandline/build/) to build an image as a base for your containers (. represents the current directory and the directory contains your `Dockerfile`):
 
 `docker build -t <image name> <directory>`
+
 `docker build -t  my_nginx_image .` 
 
 Use [docker run](https://docs.docker.com/engine/reference/commandline/run/) to run the container:
 
 `docker run --name <container name> -d -p <host port>:<container port> <image name>`
+
 `docker run --name my_nginx_container -d -p 8080:80 my_nginx_image`
 
 Now you should able to connect to http://localhost:8080 and it will display the content `static-html-directory` that copied in.
@@ -31,6 +33,7 @@ Now you should able to connect to http://localhost:8080 and it will display the 
 Use [docker exec](https://docs.docker.com/engine/reference/commandline/exec/) to run a command in a docker container.
 
 `docker exec -it <container name> <command>`
+
 `docker exec -it my_nginx_container bash`
 
 bash is used as an example
